@@ -4,7 +4,10 @@ import reportWebVitals from './reportWebVitals';
 import { parseJWT, usuarioAutenticado } from './services/auth';
 import './index.css';
 
-import Home from './pages/Home/Home';
+import HomeLogadoAdm from './pages/Homes/HomeLogado/HomeAdm';
+import HomeLogadoFun from './pages/Homes/HomeLogado/HomeFun';
+import HomeLogadoCli from './pages/Homes/HomeLogado/HomeCli';
+import Home from './pages/Homes/Home/Home';
 import Login from './pages/Login/Login';
 import Cadastro from './pages/Cadastro/Cadastro'
 import NotFound from './pages/NotFound/NotFound';
@@ -19,6 +22,11 @@ import DadosUsuarioFun from './pages/DadosUsuario/DadosUsuarioFun'
 import DadosMaqVirAdm from './pages/DadosServico/DadosServicoAdm/DadosMaqVirAdm'
 import DadosRedeVirtualAdm from './pages/DadosServico/DadosServicoAdm/DadosRedeVirtualAdm'
 import DadosSerApliAdm from './pages/DadosServico/DadosServicoAdm/DadosSerApliAdm'
+
+import CriacaoIpCli from './pages/CriacaoSubRedeIp/CriacaoIp/CriacaoIpCli'
+import CriacaoSubRedeCli from './pages/CriacaoSubRedeIp/CriacaoSubRede/CriacaoSubRedeCli'
+import CriacaoIpFun from './pages/CriacaoSubRedeIp/CriacaoIp/CriacaoIpFun'
+import CriacaoSubRedeFun from './pages/CriacaoSubRedeIp/CriacaoSubRede/CriacaoSubRedeFun'
 
 import DadosMaqVirFun from './pages/DadosServico/DadosServicoFun/DadosMaqVirFun'
 import DadosRedeVirtualFun from './pages/DadosServico/DadosServicoFun/DadosRedeVirtualFun'
@@ -51,6 +59,10 @@ import CriacaoSerApliCli from './pages/CriacaoServico/ServicosAplicacionais/Cria
 import CriacaoMaqVirFun from './pages/CriacaoServico/MaquinasVirtuais/CriacaoMaqVirFun'
 import CriacaoRedesVirtuaisFun from './pages/CriacaoServico/RedesVirtuais/CriacaoRedesVirtuaisFun'
 import CriacaoSerApliFun from './pages/CriacaoServico/ServicosAplicacionais/CriacaoSerApliFun'
+
+import DadosMaqVirCli from './pages/DadosServico/DadosServicoCli/DadosMaqVirCli'
+import DadosRedeVirtualCli from './pages/DadosServico/DadosServicoCli/DadosRedeVirtualCli'
+import DadosSerApliCli from './pages/DadosServico/DadosServicoCli/DadosSerApliCli'
 
 import MaquinasVirtuaisDoUsuarioFun from './pages/ListagemServicosDoUsuario/MaquinasVirtuais/MaquinasVirtuaisDoUsuarioFun'
 import RedesVirtuaisDoUsuarioFun from './pages/ListagemServicosDoUsuario/RedesVirtuais/RedesVirtuaisDoUsuarioFun'
@@ -106,19 +118,18 @@ const routing = (
   <Router>
     <div>
       <Switch>
-        <Route exact path="/" component={Home} />
         <Route exact path="/login" component={props => <Login {...props} />} />
         <Route path="/cadastro" component={Cadastro} />
 
         <PermissaoAdm path="/edicaodadosusuarioadm" component={EdicaoDadosUsuarioAdm} />
         <PermissaoAdm path="/dadosusuarioadm" component={DadosUsuarioAdm} />
-        <PermissaoAdm path="/dadosmaqviradm" component={DadosMaqVirAdm} />
-        <PermissaoAdm path="/dadosredevirtualadm" component={DadosRedeVirtualAdm} />
-        <PermissaoAdm path="/dadosserapliadm" component={DadosSerApliAdm} />
         <PermissaoAdm path="/maquinasvirtuaisadm" component={MaquinasVirtuaisAdm} />
         <PermissaoAdm path="/redesvirtuaisadm" component={RedesVirtuaisAdm} />
         <PermissaoAdm path="/serapliadm" component={SerApliAdm} />
         <Route exact path="/" component={Home} />
+        <PermissaoCli path="/HomeCli" component={HomeLogadoCli} />
+        <PermissaoFun path="/HomeFun" component={HomeLogadoFun} />
+        <PermissaoAdm path="/HomeAdm" component={HomeLogadoAdm} />
 
         <PermissaoAdm path="/contatosadm" component={ContatosAdm} />
         <PermissaoAdm path="/edicaocontatosadm" component={EdicaoContatosAdm} />
@@ -138,6 +149,8 @@ const routing = (
         <PermissaoFun path="/maquinasvirtuaisfun" component={MaquinasVirtuaisFun} />
         <PermissaoFun path="/redesvirtuaisfun" component={RedesVirtuaisFun} />
         <PermissaoFun path="/seraplifun" component={SerApliFun} />
+        <PermissaoFun path="/criacaoipfun" component={CriacaoIpFun} />
+        <PermissaoFun path="/criacaosubredefun" component={CriacaoSubRedeFun} />
 
         <PermissaoFun path="/edicaomaqvirfun" component={EdicaoMaqVirFun} />
         <PermissaoFun path="/edicaoredesvirtuaisfun" component={EdicaoRedesVirtuaisFun} />
@@ -156,13 +169,25 @@ const routing = (
         <PermissaoCli path="/criacaomaqvircli" component={CriacaoMaqVirCli} />
         <PermissaoCli path="/criacaoredesvirtuaiscli" component={CriacaoRedesVirtuaisCli} />
         <PermissaoCli path="/criacaoseraplicli" component={CriacaoSerApliCli} />
-        <PermissaoCli path="/maqvirusuariocli" component={MaquinasVirtuaisDoUsuarioCli} />
+
+        <PermissaoCli path="/maqvirusuariocli" component={MaquinasVirtuaisDoUsuarioCli}/>
+
+        <Route path="/dadosmaqvircli/:id" component={DadosMaqVirCli}/>
+        <Route path="/dadosredevirtualcli/:id" component={DadosRedeVirtualCli} />
+        <Route path="/dadosseraplicli/:id" component={DadosSerApliCli} />
+
+        <Route path="/dadosmaqviradm/:id" component={DadosMaqVirAdm} />
+        <Route path="/dadosredevirtualadm/:id" component={DadosRedeVirtualAdm} />
+        <Route path="/dadosserapliadm/:id" component={DadosSerApliAdm} />
+
         <PermissaoCli path="/redesvirtuaisusuariocli" component={RedesVirtuaisDoUsuarioCli} />
         <PermissaoCli path="/serapliusuariocli" component={SerApliDoUsuarioCli} />
         <PermissaoCli path="/dadosusuariocli" component={DadosUsuarioCli} />
         <PermissaoCli path="/edicaodadosusuariocli" component={EdicaoDadosUsuarioCli} />
+        <PermissaoCli path="/criacaoipcli" component={CriacaoIpCli} />
+        <PermissaoCli path="/criacaosubredecli" component={CriacaoSubRedeCli} />
 
-        <Route path="/login" component={props => <Login {...props} />} />
+        <Route path="/login/:id" component={props => <Login {...props} />} />
         <Route path="/cadastro" component={Cadastro} />
 
         <Route path="*" component={props => <NotFound {...props} />} />

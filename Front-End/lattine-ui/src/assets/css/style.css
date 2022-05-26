@@ -4,6 +4,20 @@
     box-sizing: border-box;
 }
 
+.excluir-servico {
+    margin-top: 40px;
+    font-family: Segoe UI;
+    font-size: 24px;
+    font-weight: 400;
+    text-align: left;
+    text-decoration: underline;
+    color: red;
+    max-width: 100%;
+    width: fit-content;
+    border: none;
+    background: none;
+}
+
 /*==========Home==========*/
 
 .headerHome {
@@ -131,6 +145,7 @@
     font-size: 36px;
     line-height: 44px;
     color: #0079D1;
+    margin-bottom: 64px;
 }
 
 /*==========Contatos Lattine Group - Adm==========*/
@@ -153,7 +168,7 @@
     font-size: 48px;
     font-weight: 350;
     text-align: left;
-    max-width: 50%;
+    max-width: 100%;
 }
 
 .container-conteudo h2 {
@@ -162,7 +177,7 @@
     font-size: 24px;
     font-weight: 600;
     text-align: left;
-    max-width: 50%;
+    max-width: 100%;
 }
 
 .container-conteudo p {
@@ -171,7 +186,7 @@
     font-size: 24px;
     font-weight: 350;
     text-align: left;
-    max-width: 75%;
+    max-width: 100%;
 }
 
 .container-conteudo a {
@@ -182,7 +197,7 @@
     text-align: left;
     text-decoration: underline;
     color: #0089CD;
-    max-width: 50%;
+    max-width: 100%;
 }
 
 .botaoCard1 {
@@ -249,6 +264,79 @@
     border: 3px solid #0079D1;
 }
 
+.card{
+    background-color: #EAEAEA;;
+    height: 500px;
+    width: 1700px;
+    border-radius: 30px;
+    margin-top: 54px;
+    margin-bottom: 54px;
+    display: flex;
+    align-items: center;
+   
+  
+
+}
+.blocoEsquerdaCard{
+    width: 589px;
+    height: 500px;
+    margin-left: 143px;
+    display: flex;
+    flex-direction: column;
+    margin-right: 155px;
+    
+
+}
+
+.card p {
+    color: #0089CD;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-style: bold;
+    font-weight: 700;
+    font-size: 32px;
+    margin-bottom: 32px;
+    margin-top: 56px;
+    
+}
+
+.card span {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19px;
+    text-align: justify;
+    margin-bottom: 54px;
+}
+
+.botaoDentro{
+    width: 200px;
+    height: 50px;
+    background: #0079D1;
+    color: white;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+font-style: normal;
+font-weight: 600;
+font-size: 24px;
+}
+
+.ftHomeMaquina {
+    width: 700px;
+    height: auto;
+}
+
+.ftHomeRede{
+    width: 650px;
+    height: auto;
+}
+
+.ftHomeServicos {
+    width: 650px;
+    height: auto;
+}
 /*==========Contatos Lattine Group - Adm==========*/
 
 .botaoChat {
@@ -677,6 +765,8 @@ input::placeholder {
     justify-content: center;
     padding-left: 4%;
     margin-bottom: 3%;
+    text-decoration: none;
+    color: black;
 }
 
 .retangulo-usuario h1 {
@@ -687,6 +777,8 @@ input::placeholder {
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
+    text-decoration: none;
+    color: black;
 }
 
 .proxima-pagina {
@@ -702,6 +794,17 @@ input::placeholder {
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: Segoe UI;
+    font-size: 20px;
+    text-align: left;
+    height: 100%;
+    color: #0089CD;
+}
+
+.criarredeip {
+    display: flex;
+    align-items: center;
+    justify-content: left;
     font-family: Segoe UI;
     font-size: 20px;
     text-align: left;
@@ -726,6 +829,7 @@ input::placeholder {
     font-size: 16px;
     font-weight: 350;
     text-align: left;
+    color: black;
 }
 
 .retangulo-usuario p {
@@ -733,6 +837,7 @@ input::placeholder {
     font-size: 16px;
     font-weight: 350;
     text-align: left;
+    color: black;
 }
 
 /*==========Login==========*/
@@ -1096,7 +1201,7 @@ input::placeholder {
     font-size: 48px;
     font-weight: 350;
     text-align: left;
-    max-width: 50%;
+    max-width: 100%;
 }
 
 .container-conteudo-servico h2 {
@@ -1113,7 +1218,7 @@ input::placeholder {
     font-size: 24px;
     font-weight: 600;
     text-align: left;
-    max-width: 50%;
+    max-width: 100%;
 }
 
 .container-conteudo-servico p {
@@ -1122,10 +1227,10 @@ input::placeholder {
     font-size: 24px;
     font-weight: 350;
     text-align: left;
-    max-width: 75%;
+    max-width: 100%;
 }
 
-.container-conteudo-servico a {
+.editar-servico {
     margin-top: 40px;
     font-family: Segoe UI;
     font-size: 24px;
@@ -1133,7 +1238,7 @@ input::placeholder {
     text-align: left;
     text-decoration: underline;
     color: #0089CD;
-    max-width: 50%;
+    max-width: 100%;
 }
 
 
@@ -1213,7 +1318,7 @@ input::placeholder {
     font-size: 48px;
     font-weight: 350;
     text-align: left;
-    max-width: 50%;
+    max-width: 100%;
 }
 
 .container-conteudo-escolher-cli h1 {
@@ -1222,7 +1327,7 @@ input::placeholder {
     font-size: 48px;
     font-weight: 350;
     text-align: left;
-    max-width: 50%;
+    max-width: 100%;
 }
 
 .escolhas-da-vida {
@@ -1393,6 +1498,16 @@ input::placeholder {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+@media only screen and (max-device-width: 900px) {
+    .conteudo {
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 .input-text-edicao {

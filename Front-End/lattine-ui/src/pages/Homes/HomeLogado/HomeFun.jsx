@@ -1,13 +1,14 @@
-import { Component } from 'react';
+
 import { Link } from "react-router-dom";
 import React, {useState} from "react";
 
-import '../../assets/css/style.css';
+import '../../../assets/css/style.css';
 import Card from './Card';
+import Data from './DataFun'
 
 
-import LogoLattine from '../../assets/img/Lattine.png'
-import imgHome from '../../assets/img/imgHome.png'
+import LogoLattine from '../../../assets/img/Lattine.png'
+import imgHome from '../../../assets/img/imgHome.png'
 
 export default function Home() {
 
@@ -19,7 +20,7 @@ export default function Home() {
             <div className="ConteudoTodo">
                 <header className="headerHome">
                     <img className="imgLattine" src={LogoLattine} alt="Logo da Lattine Group" />
-                    <Link className="BotaoLogin" to="/login"> Login </Link>
+                    <Link className="BotaoLogin" to="/login"> Deslogar </Link>
                 </header>
 
                 <div className="Conteudo">
@@ -41,15 +42,15 @@ export default function Home() {
                         <h2 className="servicosOfertados">Nossos serviços </h2>
 
                         <nav className="menuButton">
-                            <button onClick={() => setActive("PrimeiroCard")} className="botaoCard1"> Maquinas Virtual </button>
-                            <button onClick={() => setActive("SegundoCard")} className="botaoCard2"> Serviços Operacionais</button>
+                            <button onClick={() => setActive("PrimeiroCard")} className="botaoCard1"> Máquinas Virtuais </button>
+                            <button onClick={() => setActive("SegundoCard")} className="botaoCard2"> Serviços Aplicacionais</button>
                             <button onClick={() => setActive("TerceiroCard")} className="botaoCard3"> Redes Virtuais</button>
                         </nav>
 
                         <div>
-                            {active === "PrimeiroCard"  && <Card title="1" className="testeCard"/>}
-                            {active === "SegundoCard"  && <Card title="2" className=""/>}
-                            {active === "TerceiroCard"  && <Card title="3" className=""/>}
+                            {active === "PrimeiroCard"  && <Card data={Data} cardHome={0} className="primeiroCard"/>}
+                            {active === "SegundoCard"  && <Card data={Data} cardHome={1} className="sugundoCard"/>}
+                            {active === "TerceiroCard"  && <Card data={Data} cardHome={2} className="terceiroCard"/>}
                         </div>
 
                         <h3 className="ultimaFrase"> Juntos podemos ir mais longe!</h3>
